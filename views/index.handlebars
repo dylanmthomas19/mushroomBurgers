@@ -2,21 +2,21 @@
 	<div class="row">
 		<div class="col-md-12 text-center" id="top-bar">
 			<img src="/assets/images/burger.png" alt="burger" />
-			<h1> Eat-Da-Burger! </h1>
+			<h1> Mushroom Burgers </h1>
 		</div>
 		<div class="col-md-6 text-center" class="task">
 			<div class="row">
 			  {{#each burger_data}}
-			  	{{#unless this.devoured}}
+			  	{{#unless this.eaten}}
 				<div class="col-md-9 text-center">
 					<pre>{{this.id}}. {{this.burger_name}}
 					</pre>
-				  		<!-- {{this.Date}} -->
+					
 				</div>
 				<div class="col-md-3 text-center">
-					<form class="devour-form button-size">
+					<form class="eatThis button-size">
 						<input input type="hidden" class="burger_id" type="text" value={{this.id}}><br>
-						<button type="submit" class="btn btn-default">Devour it!</button>
+						<button type="submit" class="btn btn-default">Eat This!</button>
 					</form>
 				</div>
 				{{/unless}}
@@ -25,8 +25,8 @@
 		</div>
 		<div class="col-md-6 text-center" class="task">
 			  {{#each burger_data}}
-			  	{{#if this.devoured}}
-			  		<input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
+			  	{{#if this.eaten}}
+			  		<input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}">
 				{{/if}}
 			  {{/each}}
 		</div>
@@ -38,9 +38,9 @@
 		<div class="col-md-12 text-center enter_section">
 			<form action="/burgers/create" method="POST">
 				<input type="text" class="form-control" name="burger_name" value="" id="enter_text">
-				<button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
+				<button type="submit" class="btn btn-primary" id="text-enter-button">Prepare</button>
 			</form>
-			<p>Enter a burger you want to eat Click the "Submit" button.</p>
+			<p>Search for a mushroom-themed burger, then click the "prepare" button.</p>
 		</div>
 	</div>
 </div>
