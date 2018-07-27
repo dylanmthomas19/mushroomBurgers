@@ -8,7 +8,7 @@ var burger = {
   },
   create: function(name, cb) {
     orm.create("burgers", [
-      "burger_name", "devoured"
+      "burger_name", "eaten"
     ], [
       name, false
     ], cb);
@@ -16,7 +16,7 @@ var burger = {
   update: function(id, cb) {
     var condition = "id=" + id;
     orm.update("burgers", {
-      devoured: true
+      eaten: true
     }, condition, cb);
   }
 };
